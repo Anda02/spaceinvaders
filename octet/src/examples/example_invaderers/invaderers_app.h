@@ -208,6 +208,7 @@ namespace octet {
 
     ALuint get_sound_source() { return sources[cur_source++ % num_sound_sources]; }
 
+	/*
     // called when we hit an enemy
     void on_hit_invaderer() {
       ALuint source = get_sound_source();
@@ -223,7 +224,9 @@ namespace octet {
         sprites[game_over_sprite].translate(-20, 0);
       }
     }
+	*/
 
+	/*
     // called when we are hit
     void on_hit_ship() {
       ALuint source = get_sound_source();
@@ -235,6 +238,7 @@ namespace octet {
         sprites[game_over_sprite].translate(-20, 0);
       }
     }
+	*/
 
     // use the keyboard to move the ship
     void move_ship() {
@@ -328,7 +332,7 @@ namespace octet {
               invaderer.translate(20, 0);
               missile.is_enabled() = false;
               missile.translate(20, 0);
-              on_hit_invaderer();
+              //on_hit_invaderer();
 
               goto next_missile;
             }
