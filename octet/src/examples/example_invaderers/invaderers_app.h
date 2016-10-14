@@ -285,7 +285,7 @@ namespace octet {
         }
       }
     }
-
+	/*
     // pick and invader and fire a bomb
     void fire_bombs() {
       if (bombs_disabled) {
@@ -313,7 +313,7 @@ namespace octet {
         }
       }
     }
-
+	*/
     // animate the missiles
     void move_missiles() {
       const float missile_speed = 0.3f;
@@ -502,7 +502,7 @@ namespace octet {
 
       fire_missiles();
 
-      fire_bombs();
+      //fire_bombs();
 
       move_missiles();
 
