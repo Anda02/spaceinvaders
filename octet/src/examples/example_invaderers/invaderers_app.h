@@ -341,7 +341,7 @@ namespace octet {
       next_missile:;
       }
     }
-
+	/*
     // animate the bombs
     void move_bombs() {
       const float bomb_speed = 0.2f;
@@ -364,8 +364,9 @@ namespace octet {
       next_bomb:;
       }
     }
-
+	*/
     // move the array of enemies
+	/*
     void move_invaders(float dx, float dy) {
       for (int j = 0; j != num_invaderers; ++j) {
         sprite &invaderer = sprites[first_invaderer_sprite+j];
@@ -374,6 +375,7 @@ namespace octet {
         }
       }
     }
+	*/
 
     // check if any invaders hit the sides.
     bool invaders_collide(sprite &border) {
@@ -506,16 +508,18 @@ namespace octet {
 
       move_missiles();
 
-      move_bombs();
+      //move_bombs();
 
-      move_invaders(invader_velocity, 0);
+      //move_invaders(invader_velocity, 0);
 
       sprite &border = sprites[first_border_sprite+(invader_velocity < 0 ? 2 : 3)];
+	  
       if (invaders_collide(border)) {
         invader_velocity = -invader_velocity;
-        move_invaders(invader_velocity, -0.1f);
+        //move_invaders(invader_velocity, -0.1f);
       }
     }
+	
 
     // this is called to draw the world
     void draw_world(int x, int y, int w, int h) {
