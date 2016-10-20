@@ -17,6 +17,7 @@
 //   Audio
 //
 
+#include <chrono>
 namespace octet {
   class sprite {
     // where is our sprite (overkill for a 2D game!)
@@ -258,7 +259,7 @@ namespace octet {
         }
       }
 	  if (is_key_down(VK_SPACE)) {
-		  sprites[ship_sprite].translate(0, +initial_accel);
+		  sprites[ship_sprite].translate(0, +initial_accel-(1));
 		  if (sprites[ship_sprite].collides_with(sprites[first_border_sprite + 3])) {
 			  sprites[ship_sprite].translate(0, -ship_speed);
 		  }
