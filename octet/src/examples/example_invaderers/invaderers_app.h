@@ -242,6 +242,7 @@ namespace octet {
 
     // use the keyboard to move the ship
     void move_ship() {
+		float initial_accel = 0.15;
       const float ship_speed = 0.05f;
       // left and right arrows + up and down
       if (is_key_down(key_left)) {
@@ -256,6 +257,12 @@ namespace octet {
           sprites[ship_sprite].translate(-ship_speed, 0);
         }
       }
+	  if (is_key_down(VK_SPACE)) {
+		  sprites[ship_sprite].translate(0, +initial_accel);
+		  if (sprites[ship_sprite].collides_with(sprites[first_border_sprite + 3])) {
+			  sprites[ship_sprite].translate(0, -ship_speed);
+		  }
+	  }
 	  /*
 	  if (is_key_down(key_up)) {
 		  sprites[ship_sprite].translate(0, +ship_speed);
@@ -278,7 +285,7 @@ namespace octet {
     void fire_missiles() {
       if (missiles_disabled) {
         --missiles_disabled;
-      } else if (is_key_going_down(' ')) {
+      } else if (is_key_going_down('z')) {
         // find a missile
         for (int i = 0; i != num_missiles; ++i) {
           if (!sprites[first_missile_sprite+i].is_enabled()) {
