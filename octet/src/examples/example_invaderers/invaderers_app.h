@@ -18,6 +18,9 @@
 //
 
 #include <chrono>
+#include <iostream>
+#include <ctime>
+
 namespace octet {
   class sprite {
     // where is our sprite (overkill for a 2D game!)
@@ -258,28 +261,41 @@ namespace octet {
           sprites[ship_sprite].translate(-ship_speed, 0);
         }
       }
+	  /*
 	  if (is_key_down(VK_SPACE)) {
+		  //measures when the clock starts
+		  std::chrono::time_point<std::chrono::system_clock> start, end;
+		  start = std::chrono::system_clock::now();
+		  //measures when the clock ends
+		  while (is_key_down(VK_SPACE)==true)
+		  {
+			  std::chrono::time_point<std::chrono::system_clock> start, end;
+			  end = std::chrono::system_clock::now();
+		  }
+		  float timeelapsed = end - start;
+
 		  sprites[ship_sprite].translate(0, +initial_accel-(1));
 		  if (sprites[ship_sprite].collides_with(sprites[first_border_sprite + 3])) {
 			  sprites[ship_sprite].translate(0, -ship_speed);
 		  }
 	  }
-	  /*
+	  */
+	  
 	  if (is_key_down(key_up)) {
 		  sprites[ship_sprite].translate(0, +ship_speed);
 		  if (sprites[ship_sprite].collides_with(sprites[first_border_sprite + 3])) {
 			  sprites[ship_sprite].translate(0, -ship_speed);
 		  }
 	  }
-	  */
-	  /*
+	  
+	  
 	  if (is_key_down(key_down)) {
 		  sprites[ship_sprite].translate(0, -ship_speed);
 		  if (sprites[ship_sprite].collides_with(sprites[first_border_sprite + 3])) {
 			  sprites[ship_sprite].translate(0, +ship_speed);
 		  }
 	  }
-	  */
+	  
     }
 
     // fire button (space)
