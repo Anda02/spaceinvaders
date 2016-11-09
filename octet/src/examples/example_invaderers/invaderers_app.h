@@ -159,6 +159,7 @@ namespace octet {
 
       // sprite definitions
       ship_sprite = 0,
+	  system_sprite,
       game_over_sprite,
 
       first_invaderer_sprite,
@@ -479,8 +480,8 @@ namespace octet {
 
       GLuint invaderer = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/invaderer.gif");
 
-	  GLuint system = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers.invader.gif");
-	  sprites[system_sprite].init(system, 0, 0, 0, 0);
+	  GLuint system = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/system.gif");
+	  sprites[system_sprite].init(system, 0, 0, 0.75f, 0.75f);
 	  /*
       for (int j = 0; j != num_rows; ++j) {
         for (int i = 0; i != num_cols; ++i) {
