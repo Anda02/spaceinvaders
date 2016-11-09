@@ -165,8 +165,8 @@ namespace octet {
 	  system_sprite,
 	  planet_sprite1,
 	  planet_sprite2,
-	  moon,
-	  star,
+	  moon_sprite,
+	  star_sprite,
       game_over_sprite,
 
       first_invaderer_sprite,
@@ -567,13 +567,15 @@ namespace octet {
         invader_velocity = -invader_velocity;
         //move_invaders(invader_velocity, -0.1f);
       }
+	  //New Star system | Matthew helped figure out collider
 	  if (sprites[ship_sprite].collides_with(sprites[system_sprite])) 
 	  {
 		  sprites[system_sprite].init(system, 500, 0, 0.75f, 0.75f);
 		  planet = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/planet.gif");
 		  sprites[planet_sprite1].init(planet, 1, 2, 0.25, 0.25);
 		  sprites[planet_sprite2].init(planet, -1, -1.5, 0.30, 0.30);
-
+		  moon = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/moon.gif");
+		  sprites[moon_sprite].init(moon, -1.4, -1.0, 0.1, 0.1);
 	  }
     }
 	
