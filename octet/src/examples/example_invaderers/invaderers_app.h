@@ -144,7 +144,7 @@ namespace octet {
     // Matrix to transform points in our camera space to the world.
     // This lets us move our camera
     mat4t cameraToWorld;
-
+	GLuint system;
     // shader to draw a textured triangle
     texture_shader texture_shader_;
 
@@ -480,7 +480,7 @@ namespace octet {
 
       GLuint invaderer = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/invaderer.gif");
 
-	  GLuint system = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/system.gif");
+	  system = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/system.gif");
 	  sprites[system_sprite].init(system, 0, 0, 0.75f, 0.75f);
 	  /*
       for (int j = 0; j != num_rows; ++j) {
@@ -551,11 +551,16 @@ namespace octet {
       //move_invaders(invader_velocity, 0);
 
       sprite &border = sprites[first_border_sprite+(invader_velocity < 0 ? 2 : 3)];
+	  sprite &systemcollide = sprites[system_sprite];
 	  
       if (invaders_collide(border)) {
         invader_velocity = -invader_velocity;
         //move_invaders(invader_velocity, -0.1f);
       }
+	  if (sprites[ship_sprite].collides_with(sprites[system_sprite])) 
+	  {
+		  sprites[system_sprite].init(system, 500, 0, 0.75f, 0.75f);
+	  }
     }
 	
 
