@@ -478,6 +478,9 @@ namespace octet {
       sprites[game_over_sprite].init(GameOver, 20, 0, 3, 1.5f);
 
       GLuint invaderer = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/invaderer.gif");
+
+	  GLuint system = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers.invader.gif");
+	  sprites[system_sprite].init(system, 0, 0, 0, 0);
 	  /*
       for (int j = 0; j != num_rows; ++j) {
         for (int i = 0; i != num_cols; ++i) {
