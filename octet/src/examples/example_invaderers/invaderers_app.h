@@ -146,6 +146,8 @@ namespace octet {
     mat4t cameraToWorld;
 	GLuint system;
 	GLuint planet;
+	GLuint moon;
+	GLuint star;
     // shader to draw a textured triangle
     texture_shader texture_shader_;
 
@@ -163,6 +165,8 @@ namespace octet {
 	  system_sprite,
 	  planet_sprite1,
 	  planet_sprite2,
+	  moon,
+	  star,
       game_over_sprite,
 
       first_invaderer_sprite,
