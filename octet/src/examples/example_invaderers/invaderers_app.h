@@ -145,6 +145,7 @@ namespace octet {
     // This lets us move our camera
     mat4t cameraToWorld;
 	GLuint system;
+	GLuint planet;
     // shader to draw a textured triangle
     texture_shader texture_shader_;
 
@@ -160,6 +161,8 @@ namespace octet {
       // sprite definitions
       ship_sprite = 0,
 	  system_sprite,
+	  planet_sprite1,
+	  planet_sprite2,
       game_over_sprite,
 
       first_invaderer_sprite,
@@ -482,6 +485,9 @@ namespace octet {
 
 	  system = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/system.gif");
 	  sprites[system_sprite].init(system, 0, 0, 0.75f, 0.75f);
+
+	  
+
 	  /*
       for (int j = 0; j != num_rows; ++j) {
         for (int i = 0; i != num_cols; ++i) {
@@ -560,6 +566,8 @@ namespace octet {
 	  if (sprites[ship_sprite].collides_with(sprites[system_sprite])) 
 	  {
 		  sprites[system_sprite].init(system, 500, 0, 0.75f, 0.75f);
+		  planet = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/planet.gif");
+
 	  }
     }
 	
