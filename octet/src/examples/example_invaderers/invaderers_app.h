@@ -576,6 +576,9 @@ namespace octet {
 		  sprites[planet_sprite2].init(planet, -1, -1.5, 0.30, 0.30);
 		  moon = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/moon.gif");
 		  sprites[moon_sprite].init(moon, -1.4, -1.0, 0.1, 0.1);
+		  star = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/star.gif");
+		  sprites[star_sprite].init(star, -1.7, 1.8, 0.25, 0.25);
+
 	  }
     }
 	
