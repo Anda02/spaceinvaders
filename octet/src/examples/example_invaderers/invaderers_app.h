@@ -571,6 +571,7 @@ namespace octet {
 	  if (sprites[ship_sprite].collides_with(sprites[system_sprite]) || GetAsyncKeyState(VK_SPACE))
 	  {
 		  float random[8] = { rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2 };
+		  int planetsupply[2] = { rand() % 2, rand() % 2 };
 		  sprites[system_sprite].init(system, 500, 0, 0.75f, 0.75f);
 		  planet = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/planet.gif");
 		  sprites[planet_sprite1].init(planet, random[0], random[1], 0.25, 0.25);
@@ -580,8 +581,15 @@ namespace octet {
 		  star = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/star.gif");
 		  sprites[star_sprite].init(star, random[6], random[7], 0.25, 0.25);
 		  std::cout << random[0];
+		  //Interacting with PLANETS!
+		  if (sprites[ship_sprite].collides_with(sprites[planet_sprite1]) && planetsupply[0] == 1)
+		  {
+
+		  }
 
 	  }
+	  
+	  
     }
 	
 
