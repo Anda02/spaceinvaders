@@ -568,18 +568,18 @@ namespace octet {
         //move_invaders(invader_velocity, -0.1f);
       }
 	  //New Star system | Matthew helped figure out collider
-	  if (sprites[ship_sprite].collides_with(sprites[system_sprite])) 
+	  if (sprites[ship_sprite].collides_with(sprites[system_sprite]) || GetAsyncKeyState(VK_SPACE))
 	  {
-		  int random[8] = { rand() % 3, rand() % 3, rand() % 3, rand() % 3, rand() % 3, rand() % 3, rand() % 3, rand() % 3 };
-		  float randomfloat[8] = { rand() % 1, rand() % 1, rand() % 1, rand() % 1, rand() % 1, rand() % 1, rand() % 1, rand() % 1 };
+		  float random[8] = { rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2, rand() % 4 + -2 };
 		  sprites[system_sprite].init(system, 500, 0, 0.75f, 0.75f);
 		  planet = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/planet.gif");
-		  sprites[planet_sprite1].init(planet, 1, 2, 0.25, 0.25);
-		  sprites[planet_sprite2].init(planet, -1, -1.5, 0.30, 0.30);
+		  sprites[planet_sprite1].init(planet, random[0], random[1], 0.25, 0.25);
+		  sprites[planet_sprite2].init(planet, random[2], random[3], 0.30, 0.30);
 		  moon = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/moon.gif");
-		  sprites[moon_sprite].init(moon, -1.4, -1.0, 0.1, 0.1);
+		  sprites[moon_sprite].init(moon, random[4], random[5], 0.1, 0.1);
 		  star = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/star.gif");
-		  sprites[star_sprite].init(star, -1.7, 1.8, 0.25, 0.25);
+		  sprites[star_sprite].init(star, random[6], random[7], 0.25, 0.25);
+		  std::cout << random[0];
 
 	  }
     }
