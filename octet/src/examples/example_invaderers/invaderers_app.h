@@ -570,6 +570,7 @@ namespace octet {
 	  //New Star system | Matthew helped figure out collider
 	  if (sprites[ship_sprite].collides_with(sprites[system_sprite])) 
 	  {
+		  int random[16] = { rand() % 3, rand() % 3, rand() % 1, rand() % 1, rand() % 3, rand() % 3, rand() % 1, rand() % 1, rand() % 3, rand() % 3, rand() % 1, rand() % 1, rand() % 3, rand() % 3, rand() % 1, rand() % 1 };
 		  sprites[system_sprite].init(system, 500, 0, 0.75f, 0.75f);
 		  planet = resource_dict::get_texture_handle(GL_RGBA, "assets/invaderers/planet.gif");
 		  sprites[planet_sprite1].init(planet, 1, 2, 0.25, 0.25);
